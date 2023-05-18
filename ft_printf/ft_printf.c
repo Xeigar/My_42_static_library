@@ -91,7 +91,7 @@ int	checker(t_struct *ptr, const char *txt, int i)
 		return (0);
 	else
 	{
-		ptr->len += write(1, "%", 6);
+		ptr->len += write(1, "%", 1);
 		i--;
 	}
 	return (i);

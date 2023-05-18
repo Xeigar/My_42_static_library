@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmoutinh <tmoutinh@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 11:10:09 by tmoutinh          #+#    #+#             */
-/*   Updated: 2023/05/08 17:21:42 by tmoutinh         ###   ########.fr       */
+/*   Updated: 2023/05/15 10:47:34 by tmoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,15 @@ char	*get_txt(int fd, char *txt)
 
 char	*get_next_line(int fd)
 {
-	static char	*txt;
+	static char	*txt[FOPEN_MAX];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || fd > FOPEN_MAX || BUFFER_SIZE <= 0)
 		return (NULL);
-	txt = get_txt(fd, txt);
-	if (!txt)
+	txt[fd] = get_txt(fd, txt[fd]);
+	if (!txt[fd])
 		return (NULL);
-	line = extraction(txt);
-	txt = removal(txt);
+	line = extraction(txt[fd]);
+	txt[fd] = removal(txt[fd]);
 	return (line);
 }
