@@ -37,4 +37,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus get_printf get_get_next
+.PHONY: all clean fclean re bonus
