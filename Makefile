@@ -21,9 +21,6 @@ MAKE = make -C
 %.o: %.c
 	@$(CC) -c $< -o $@
 
-MAKE = make -C
-
-
 $(NAME): $(OBJT)
 	@echo "Combining get_next_line.a, libft.a and libprintf.a"
 	ar rcs $(NAME) $(OBJT)
