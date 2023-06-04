@@ -29,7 +29,7 @@ all: $(NAME)
 
 clean:
 	@echo "Deleting object files"
-	@rm -r $(GET_DIR)/*.o $(PRT_DIR)/*.o $(LIB_DIR)/*.o
+	@rm -r $(GET_DIR)*.o $(PRT_DIR)*.o $(LIB_DIR)*.o
 
 fclean: clean
 	@echo "Deleting libft.a"
