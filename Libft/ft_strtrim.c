@@ -32,14 +32,14 @@ static void	fill(char *p, int start, int end, char const *s1)
 
 	i = 0;
 	if (end != 0)
-	{		
+	{
 		while (start <= end)
 		{
 			p[i] = s1[start];
 			start++;
 			i++;
 		}
-	}	
+	}
 	p[i] = '\0';
 }
 
@@ -55,7 +55,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = ft_strlen(s1) - 1;
 	start = 0;
 	while (end != start && in(s1[end], set) == 0)
-			end--;
+		end--;
 	if (end == start)
 		size = 1;
 	else

@@ -39,7 +39,7 @@ char	*ft_itoa(int n)
 	if (!tab)
 		return (NULL);
 	if (i < 0)
-	{		
+	{
 		tab[0] = '-';
 		i = -i;
 	}
